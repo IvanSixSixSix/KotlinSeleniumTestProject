@@ -8,19 +8,22 @@ import org.openqa.selenium.WebElement
 class StartPage(driver: WebDriver) : BasePage(driver) {
 
     private val searchField = FindElemetByXPath("//*[@id='text']")
-    private var searchButton = FindElemetByXPath("//button[text()]")
-    private var listOutput = FindElemetsByXPath("//*[@id='suggest-list-gc0lnfr8ff']")
+    private val searchButton = FindElemetByXPath("//button[text()]")
+    val listOutput = "//*[contains(@data-text,'вк звонки')]"
 
     fun InputSearchValue(searchValue: String) {
-            InputValue(searchField, searchValue)
-        }
-    fun EnterSrearch(){
+        InputValue(searchField, searchValue)
+    }
+
+    fun EnterSrearch() {
         searchButton.click()
     }
-   //fun GetOutputValue():Array<String> {
-   //    val array:Array<String> = listOutput.toTypedArray()
-   //    return array
+
+    fun GetElemetns(elemPath: String):List<WebElement>{
+        val list = FindElemetsByXPath(elemPath)
+        return list
     }
+
 }
 
 

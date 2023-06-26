@@ -17,6 +17,6 @@ import org.openqa.selenium.chrome.ChromeDriver
     @AfterEach
     fun tearDown() {
         driver.quit()
-         }
+    }
 }
 

@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+    id("io.qameta.allure") version "2.11.2"
     kotlin("jvm") version "1.8.21"
     application
 }
@@ -29,4 +30,17 @@ tasks.withType<KotlinCompile> {
 
 application {
     mainClass.set("MainKt")
+}
+allure{
+    report {
+        version.set("2.19.0")
+        adapter {
+            frameworks {
+                junit5 {
+                    adapterVersion.set("2.19.0")
+
+                }
+            }
+        }
+    }
 }
