@@ -1,5 +1,6 @@
 package driver
 
+import io.qameta.allure.Description
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
 import ru.ya.MainPage
@@ -9,6 +10,7 @@ import kotlin.test.assertTrue
 class ResultOfSearchTest : BaseTest() {
     private val input = "ВК звонки"
     @Test
+    @Description("Тест результата яндекс поиска")
     fun ResultOfSearch(){
 
         GoToUrl("https://ya.ru/")

@@ -1,5 +1,6 @@
 package driver
 
+import io.qameta.allure.Description
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.openqa.selenium.WebDriver
@@ -11,6 +12,7 @@ import kotlin.test.assertTrue
 class SearchTest : BaseTest() {
     private val input = "ВК звонки"
     @Test
+    @Description("Тест ввода ВК звонки в яндекс-поиске")
     fun SearchYandex(){
 
         GoToUrl("https://ya.ru/")
